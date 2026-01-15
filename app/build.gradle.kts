@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bettertimetoseeyou"
+    namespace = "com.example.ActivaSens"
     compileSdk = 36
 
     defaultConfig {

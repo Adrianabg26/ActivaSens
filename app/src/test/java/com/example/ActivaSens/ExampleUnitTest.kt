@@ -1,4 +1,4 @@
-package com.example.bettertimetoseeyou
+package com.example.ActivaSens
 
 import org.junit.Test
 

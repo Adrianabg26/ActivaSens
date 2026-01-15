@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BetterTimeToSeeYou"
+rootProject.name = "ActivaSens"
 include(":app")
  

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/teal_200"
+    android:background="#010621"
     android:fitsSystemWindows="true"
     android:padding="16dp">
 
@@ -11,79 +12,106 @@
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_tiempo"
+        android:text="ActivaSens"
         android:textStyle="bold"
-        android:textSize="22sp"
-        android:textColor="#000000"/>
+        android:textSize="28sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"/>
 
-
-
-    <EditText
-        android:id="@+id/etEntrada"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Escribe algo ..."
-        android:padding="12sp"/>
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginBottom="16dp">
 
-    <Button
-        android:id="@+id/btnProcesar"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de actividad 🏃‍♂️"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Duración (min) ⏱️"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Tipo (Cardio, Fuerza...) 🏷️"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="GUARDAR ACTIVIDAD"
+                app:cornerRadius="12dp"
+                android:backgroundTint="#3F51B5"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRealtime"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="MODO SENSOR EN VIVO"
+        app:strokeColor="#FEFDFF"
+        android:textColor="#D9D3E2"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Procesar"
-       />
-
-    <Button
-        android:id="@+id/btnIrSegunda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ir a segunda actividad"
-        android:layout_marginTop="12dp"/>
-
-
-    <Button
-        android:id="@+id/btnCargarPrediccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cargar Predicción"
-        android:layout_marginTop="12dp"/>
-
-    <Button
-        android:id="@+id/btnGPS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="VER GPS"
-        android:layout_marginTop="12dp"/>
-
-    <Button
-        android:id="@+id/btnShake"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SHACKEAR"
-        android:layout_marginTop="12dp"/>
-
+        android:text="HISTORIAL RECIENTE"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHoras"
+        android:id="@+id/rvSessions"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        />
-
-
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="22sp"
-        android:textColor="#000000"
-
-        />
-
-
-
-
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"/>
 
 </LinearLayout>
