@@ -1,4 +1,4 @@
-ActivaSens - Registro de Actividad Física
+# ActivaSens - Registro de Actividad Física
 
 Este proyecto es una aplicación Android desarrollada en Kotlin para la asignatura de Progrmación Multimedia y Aplicaciones móviles. La app permite gestionar un histórico de entrenamientos y monitorizar el movimiento en tiempo real mediante los sensores del dispositivo.
 
