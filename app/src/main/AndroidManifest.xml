@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--Permisos de ubicación:
+    Configurados para permitir escalabilidad si en el futuro se implementa tracking de rutas
+    No obligatorio para el acelerómetro, pero los dejo definidos siguiendo un diseño preventivo-->
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -16,15 +20,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ActivaSens">
 
+        <!--MainActivity:
+        Punto de entrada principal (Launcher).
+        Exported="true" porque es la actividad que el sistema operativo debe iniciar al pulsar el icono de la app-->
 
-        <activity android:name=".MainActivity"  android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name = "android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".RealtimeActivity" android:exported="false" />
+        <!--RealtimeActivity:
+        Pantalla para sensores. Exported="false" por seguridad (encapsulamiento),
+        para que solo mi propia aplicación pueda lanzar esta actividad-->
+
+        <activity
+            android:name=".RealtimeActivity"
+            android:exported="false" />
 
     </application>
 

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Layout Dinámico:
+El ID layoutRealtime es fundamental aquí, desde el código Kotlin cambiaremos
+su BackgroundColor según la intensidad del movimiento detectado por el sensor-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutRealtime"
@@ -8,6 +11,9 @@
     android:padding="16dp"
     android:background="#D3D3D3">
 
+    <!--Contenedor de estado:
+    Usamos layout_weight="1" y gravity="center" para que el texto de estado
+    aparezca perfectamente centrado en la pantalla, independientemente del tamaño del dispositivo-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -15,6 +21,8 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <!--Etiqueta fija:
+        Un TextView para dar contexto al usuario sobre lo que está viendo en pantalla-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,6 +30,9 @@
             android:textSize="18sp"
             android:textColor="#444444"/>
 
+        <!--TextView variable:
+        Este componente mostrará los estados "Sin movimiento", "Suave" o "Intenso"
+        calculados en el método onSensorChanged de la actividad-->
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
@@ -33,6 +44,8 @@
             android:layout_marginTop="8dp"/>
     </LinearLayout>
 
+    <!--Acción de cierre:
+    Botón para que el usuario pueda detener la monitorización y volver a la pantalla principal-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFinalizar"
         android:layout_width="match_parent"
@@ -41,8 +54,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="12dp"
-        android:backgroundTint="#FF5252"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:backgroundTint="#FF5722"
         android:layout_marginBottom="16dp"/>
 
 </LinearLayout>

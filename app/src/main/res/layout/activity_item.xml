@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Contenedor principal: MaterialCardView-->
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,6 +17,9 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!--Cabecera:
+        Nombre de la actividad a la izquierda y el Tipo a la derecha.
+        Se utiliza RelativeLayout para facilitar el posicionamiento en los extremos-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -44,12 +48,17 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
+        <!--Separador decorativo:
+        Una línea de 1dp que ayuda a separar visualmente la cabecera de los datos técnicos-->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="12dp"
             android:background="#F4EFF4" />
 
+        <!--Sección de datos:
+        Muestra la duración y la fecha.
+        El uso de layout_weight en la duración permite que la fecha se empuje automáticamente al final de la tarjeta-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

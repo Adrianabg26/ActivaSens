@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Layout Raíz:
+Usamos orientación vertical para apilar el título, el formulario y la lista.
+fitsSystemWindows asegura que el diseño no se solape con la barra de estado del móvil-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#010621"
+    android:background="#323C57"
     android:fitsSystemWindows="true"
     android:padding="16dp">
 
@@ -13,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ActivaSens"
-        android:textStyle="bold"
         android:textSize="28sp"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-medium"/>
 
+    <!--Formulario de Entrada:
+    Agrupamos los campos de texto dentro de una tarjeta (Card)
+    para separar visualmente la sección de introducción de datos del historial-->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,6 +91,9 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!--Navegación:
+    Botón con estilo OutlinedButton para diferenciarlo de la acción de guardar.
+    Este lanza la actividad que gestiona el acelerómetro-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRealtime"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -106,6 +114,9 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="8dp"/>
 
+    <!--Listado Dinámico:
+    El RecyclerView utiliza layout_weight="1" para ocupar todo el espacio sobrante de la pantalla,
+    permitiendo hacer scroll en el historial de sesiones-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSessions"
         android:layout_width="match_parent"
