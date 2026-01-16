@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Layout Dinámico:
-El ID layoutRealtime es fundamental aquí, desde el código Kotlin cambiaremos
-su BackgroundColor según la intensidad del movimiento detectado por el sensor-->
+Desde el código Kotlin se cambiará su BackgroundColor
+según la intensidad del movimiento detectado por el sensor-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutRealtime"

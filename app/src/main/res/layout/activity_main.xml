@@ -7,9 +7,9 @@ fitsSystemWindows asegura que el diseño no se solape con la barra de estado del
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#323C57"
+    android:background="#1D1D2E"
     android:fitsSystemWindows="true"
-    android:padding="16dp">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvTitulo"
